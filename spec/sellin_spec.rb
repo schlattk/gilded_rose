@@ -1,5 +1,6 @@
-require 'sellin'
 require 'item'
+require 'sellin'
+
 
 describe "Sellin" do
   before (:each) do

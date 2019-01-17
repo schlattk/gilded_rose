@@ -1,5 +1,5 @@
-require 'tickets'
 require 'item'
+require 'tickets'
 
 describe "tickets" do
   before (:each) do
