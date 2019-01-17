@@ -2,12 +2,14 @@ require 'brie'
 require 'conjured'
 require 'generic'
 require 'item'
+require 'sellin'
 require 'tickets'
 
 class GildedRose
   include Brie
   include Conjured
   include Generic
+  include Sellin
   include Tickets
 
   def initialize(items)
@@ -16,12 +18,12 @@ class GildedRose
 
   def update_quality()
       @items.each do |item|
-        item.sell_in -= 1
+        sell_in item
         case item.name
         when "Aged Brie" then brie item
         when "Backstage passes to a TAFKAL80ETC concert" then tickets item
         when "Conjured" then conjured item
-        when "Sulfuras, Hand of Ragnaros" then item.sell_in += 1
+        when "Sulfuras, Hand of Ragnaros"
         else  generic item
         end
       end
