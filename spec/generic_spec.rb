@@ -21,7 +21,7 @@ describe "generic" do
   end
 
   it "reduces the quality by two once the sell-by date has passed " do
-    generic = Item.new("generic",0,10)
+    generic = Item.new("generic",-1,10)
     Test.new(generic).update
     expect(generic.quality).to eq(8)
   end
